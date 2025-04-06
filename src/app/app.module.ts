@@ -1,7 +1,7 @@
 import { bootstrapApplication } from '@angular/platform-browser';
-import { AppComponent } from './app/app.component';
+import { AppComponent } from './app.component';
 import { provideHttpClient } from '@angular/common/http';
-import { GithubService } from './app/services/github.service';
+import { GithubService } from './services/github.service';
 
 bootstrapApplication(AppComponent, {
   providers: [provideHttpClient(), GithubService]

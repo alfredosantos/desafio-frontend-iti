@@ -1,0 +1,75 @@
+:root {
+  --primary-color: #4285f4;
+  --secondary-color: #202124;
+  --text-color: #5f6368;
+  --error-color: #ff0000;
+  --font-size-base: 1rem;
+  --border-radius: 50px; /* Borda arredondada para o campo de busca */
+}
+
+.search-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.search-container h1 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.input-container {
+  position: relative;
+  width: 400px; /* Largura do campo de busca */
+}
+
+.input-container input {
+  width: 100%;
+  padding: 10px 20px 10px 60px; /* Espaço para a lupa */
+  font-size: var(--font-size-base);
+  border: 1px solid #ccc;
+  border-radius: var(--border-radius);
+  box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28); /* Sombra semelhante ao Google */
+  outline: none;
+  transition: box-shadow 0.3s ease;
+}
+
+.input-container input:focus {
+  box-shadow: 0 1px 6px rgba(32, 33, 36, 0.4); /* Sombra mais forte ao focar */
+  border-color: var(--primary-color); /* Azul do Google */
+}
+
+.input-container input::placeholder {
+  color: var(--text-color);
+  font-size: var(--font-size-base);
+}
+
+.input-container .search-icon {
+  position: absolute;
+  top: 50%;
+  left: 15px; /* Alinha a lupa à esquerda */
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.input-container .search-icon .material-icons {
+  font-size: 1.5rem; /* Tamanho do ícone */
+  color: var(--text-color); /* Cor semelhante ao Google */
+}
+
+.input-container .search-icon:hover .material-icons {
+  color: var(--secondary-color); /* Cor mais escura ao passar o mouse */
+}
+
+.error {
+  color: var(--error-color); /* Usa a variável para a cor */
+  font-weight: bold;
+  margin-top: 10px;
+  text-align: center;
+}

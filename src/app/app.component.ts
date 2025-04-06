@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+import { UserSearchComponent } from './components/user-search/user-search.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.css'],
+  standalone: true,
+  imports: [CommonModule, HttpClientModule, UserSearchComponent]
 })
 export class AppComponent {
   title = 'desafio-frontend-iti';

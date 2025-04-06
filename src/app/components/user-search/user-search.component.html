@@ -1,0 +1,60 @@
+<section class="search-container">
+  <h1>Busca de Usuários do GitHub</h1>
+  <form (submit)="searchUser(); $event.preventDefault()" class="search-form">
+    <div class="input-container">
+      <label for="username" class="visually-hidden"></label>
+      <input
+        id="username"
+        [(ngModel)]="username"
+        placeholder="Digite o username do GitHub"
+        name="username"
+        aria-label="Campo de busca"
+      />
+      <button type="submit" class="search-icon" aria-label="Buscar usuário">
+        <span class="material-icons" aria-hidden="true">search</span>
+      </button>
+    </div>
+  </form>
+  <div *ngIf="error" class="error" role="alert">
+    {{ error }}
+  </div>
+</section>
+
+<section *ngIf="userData" id="search-results">
+  <h2>Informações do Usuário</h2>
+  <img [src]="userData.avatar_url" alt="Imagem de perfil de {{ userData.name }}" width="100" />
+  <p><strong>Nome:</strong> {{ userData.name }}</p>
+  <p><strong>Username:</strong> {{ userData.login }}</p>
+  <p><strong>Descrição:</strong> {{ userData.bio }}</p>
+  <p><strong>Seguidores:</strong> {{ userData.followers }}</p>
+  <p><strong>Seguindo:</strong> {{ userData.following }}</p>
+  <p><strong>Localização:</strong> {{ userData.location }}</p>
+  <p><strong>Repositórios Públicos:</strong> {{ userData.public_repos }}</p>
+  <a [href]="userData.html_url" target="_blank" rel="noopener noreferrer">Ver Perfil no GitHub</a>
+</section>
+
+<section *ngIf="repos.length > 0">
+  <h2>Repositórios</h2>
+  <div>
+    <label for="filter" class="visually-hidden">Filtrar repositórios por nome</label>
+    <input
+      id="filter"
+      type="text"
+      placeholder="Filtrar por nome"
+      (input)="onFilterInput($event)"
+    />
+    <label for="sort" class="visually-hidden">Ordenar repositórios</label>
+    <select id="sort" [(ngModel)]="sortOption" (change)="sortRepos()">
+      <option value="name-asc">Nome (A-Z)</option>
+      <option value="name-desc">Nome (Z-A)</option>
+      <option value="stars-asc">Estrelas (Crescente)</option>
+      <option value="stars-desc">Estrelas (Decrescente)</option>
+    </select>
+  </div>
+
+  <ul>
+    <li *ngFor="let repo of filteredRepos">
+      <strong>{{ repo.name }}</strong> - {{ repo.stargazers_count }} ⭐
+    </li>
+  </ul>
+</section>
