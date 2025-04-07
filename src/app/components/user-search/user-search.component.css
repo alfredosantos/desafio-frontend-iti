@@ -68,7 +68,7 @@
 }
 
 .error {
-  color: var(--error-color); /* Usa a variável para a cor */
+  color: var(--error-color); /* Vermelho para mensagens de erro */
   font-weight: bold;
   margin-top: 10px;
   text-align: center;

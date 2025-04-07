@@ -11,14 +11,6 @@ export class GithubService {
 
   constructor(private http: HttpClient) { }
 
-  getRepo(repoName: string): Observable<any> {
-    return this.http.get(`${this.baseUrl}/repos/${repoName}`);
-  }
-
-  getIssues(repoName: string): Observable<any> {
-    return this.http.get(`${this.baseUrl}/repos/${repoName}/issues`);
-  }
-
   getUser(username: string): Observable<any> {
     return this.http.get(`${this.baseUrl}/users/${username}`);
   }

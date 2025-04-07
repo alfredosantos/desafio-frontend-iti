@@ -1,4 +1,4 @@
-# Desafio Frontend ITI - GitHub User Search
+# Desafio Frontend ITI
 Este projeto é uma aplicação web que permite buscar informações de usuários do GitHub, incluindo seus repositórios, seguidores, localização e outras informações relevantes. A interface foi projetada para ser semelhante ao estilo do Google, com uma caixa de busca centralizada e uma lupa estilizada.
 
 ## Índice
@@ -41,7 +41,7 @@ Siga os passos abaixo para rodar o projeto localmente:
   ```
 4. Inicie o servidor de desenvolvimento:
   ```bash
-  npm serve
+  ng serve
   ```
 
 A aplicação estará disponível em `http://localhost:4200`.
@@ -50,7 +50,7 @@ A aplicação estará disponível em `http://localhost:4200`.
 
 - Busca de usuários do GitHub pelo nome de usuário.
 - Exibição de informações detalhadas do usuário:
-Nome
+  - Nome
   - Username
   - Biografia
   - Seguidores e seguindo
@@ -67,17 +67,30 @@ Nome
 
 ```plaintext
 //desafio-frontend-iti/
-src/
-├── app/
-│   ├── components/
-│   │   ├── user-search/
-│   │   │   ├── user-search.component.ts    # Lógica principal do componente
-│   │   │   ├── user-search.component.html  # Template do componente
-│   │   │   ├── user-search.component.css   # Estilos do componente
-│   ├── services/
-│   │   ├── github.service.ts               # Serviço para comunicação com a API do GitHub
-├── assets/                                 # Recursos estáticos
-├── environments/                           # Configurações de ambiente
+├── src/
+│   ├── app/
+│   │   ├── components/
+│   │   │   ├── user-search/
+│   │   │   │   ├── user-search.component.ts    # Lógica principal do componente
+│   │   │   │   ├── user-search.component.html  # Template do componente
+│   │   │   │   ├── user-search.component.css   # Estilos do componente
+│   │   │   │   ├── user-search.component.spec.ts # Testes unitários do componente
+│   │   ├── services/
+│   │   │   ├── github.service.ts               # Serviço para comunicação com a API do GitHub
+│   │   │   ├── github.service.spec.ts          # Testes unitários do serviço
+│   ├── assets/                                 # Recursos estáticos (imagens, ícones, etc.)
+│   ├── environments/                           # Configurações de ambiente (dev e prod)
+│   ├── styles.css                              # Estilos globais da aplicação
+│   ├── main.ts                                 # Arquivo principal para bootstrap da aplicação
+│   ├── index.html                              # Arquivo HTML principal
+│   ├── polyfills.ts                            # Configurações de compatibilidade com navegadores
+│   ├── test.ts                                 # Configuração para testes unitários
+├── angular.json                                # Configuração do Angular CLI
+├── package.json                                # Dependências e scripts do projeto
+├── package-lock.json                           # Versões exatas das dependências
+├── tsconfig.json                               # Configuração do TypeScript
+├── README.md                                   # Documentação do projeto
+├── .gitignore                                  # Arquivos e pastas ignorados pelo Git
 ```
 
 ## Como Usar
