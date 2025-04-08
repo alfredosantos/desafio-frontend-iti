@@ -4,7 +4,7 @@ import { AppComponent } from './app.component';
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AppComponent], // Adicione o componente como import
+      imports: [AppComponent],
     }).compileComponents();
   });
 
@@ -17,7 +17,7 @@ describe('AppComponent', () => {
   it(`should have as title 'desafio-frontend-iti'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('desafio-frontend-iti'); // Atualize o valor esperado
+    expect(app.title).toEqual('desafio-frontend-iti');
   });
 
   it('should render title', () => {

@@ -13,7 +13,7 @@ describe('UserSearchComponent', () => {
     const spy = jasmine.createSpyObj('GithubService', ['getUser', 'getUserRepos']);
 
     await TestBed.configureTestingModule({
-      imports: [UserSearchComponent, FormsModule], // Adicione o componente como import
+      imports: [UserSearchComponent, FormsModule],
       providers: [{ provide: GithubService, useValue: spy }],
     }).compileComponents();
 
@@ -21,8 +21,7 @@ describe('UserSearchComponent', () => {
     component = fixture.componentInstance;
     githubServiceSpy = TestBed.inject(GithubService) as jasmine.SpyObj<GithubService>;
 
-    // Mock para getUserRepos
-    githubServiceSpy.getUserRepos.and.returnValue(of([])); // Retorna um Observable vazio por padrão
+    githubServiceSpy.getUserRepos.and.returnValue(of([]));
   });
 
   it('deve criar o componente', () => {

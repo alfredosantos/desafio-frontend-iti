@@ -16,7 +16,7 @@ export class UserSearchComponent {
   repos: any[] = [];
   filteredRepos: any[] = [];
   error: string | null = null;
-  sortOption: string = 'name-asc'; // Default sorting option
+  sortOption: string = 'name-asc';
 
   constructor(private githubService: GithubService) {}
 
@@ -27,7 +27,7 @@ export class UserSearchComponent {
           this.userData = data;
           this.error = null;
           this.fetchRepos();
-          setTimeout(() => this.scrollToResults(), 0); // Garante que o DOM foi atualizado
+          setTimeout(() => this.scrollToResults(), 0);
         },
         error: (err) => {
           this.error = 'Usuário não encontrado.';
